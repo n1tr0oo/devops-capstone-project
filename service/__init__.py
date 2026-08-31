@@ -25,7 +25,7 @@ def create_app(test_config=None):
 
     @app.get("/")
     def index():
-        return jsonify(name="Customer Accounts Service", version="1.0"), 200
+        return jsonify(name="Account REST API Service", version="1.0"), 200
 
     @app.get("/health")
     def health():

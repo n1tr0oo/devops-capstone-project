@@ -36,7 +36,7 @@ class AccountRoutesTest(unittest.TestCase):
 
     def test_root_returns_name_and_version(self):
         self.assertEqual(self.client.get("/").get_json(),
-                         {"name": "Customer Accounts Service", "version": "1.0"})
+                         {"name": "Account REST API Service", "version": "1.0"})
 
     def test_list_is_initially_empty(self):
         self.assertEqual(self.client.get("/accounts").get_json(), [])

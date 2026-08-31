@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 LABEL org.opencontainers.image.title="Customer Accounts Microservice" \
-      org.opencontainers.image.source="https://github.com/n1tr0oo/assik1"
+      org.opencontainers.image.source="https://github.com/n1tr0oo/devops-capstone-project"
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 WORKDIR /app
 RUN addgroup --system app && adduser --system --ingroup app app

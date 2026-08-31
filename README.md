@@ -1,6 +1,6 @@
-# Customer Accounts Microservice
+# DevOps Capstone: Customer Accounts Microservice
 
-![CI Build](https://github.com/n1tr0oo/assik1/actions/workflows/ci-build.yaml/badge.svg)
+![CI Build](https://github.com/n1tr0oo/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)
 
 Flask REST microservice for creating, listing, reading, updating, and deleting customer accounts.
 
@@ -57,7 +57,7 @@ Install compatible Catalog tasks listed in `tekton/tasks/README.md`, replace pip
 kubectl apply -f tekton/pipeline.yaml
 kubectl create -f tekton/pipeline-run.yaml
 tkn pipeline start accounts-cd --showlog \
-  -p repo-url=https://github.com/n1tr0oo/assik1.git -p branch=main \
+  -p repo-url=https://github.com/n1tr0oo/devops-capstone-project.git -p branch=main \
   -p app-name=accounts -p build-image=us.icr.io/YOUR_NAMESPACE/accounts:1 \
   -w name=source,claimName=YOUR_PVC
 bash scripts/generate_pipeline_evidence.sh
@@ -72,7 +72,7 @@ This checkout uses repository-local author `n1tr0oo`. To publish:
 ```bash
 git add .
 git commit -m "Initial Customer Accounts capstone implementation"
-git remote add origin https://github.com/n1tr0oo/assik1.git
+git remote add origin https://github.com/n1tr0oo/devops-capstone-project.git
 git push -u origin main
 # Assignment branch example: git push --set-upstream origin add-kubernetes
 ```

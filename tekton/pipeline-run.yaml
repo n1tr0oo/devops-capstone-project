@@ -5,7 +5,7 @@ metadata:
 spec:
   pipelineRef: {name: accounts-cd}
   params:
-    - {name: repo-url, value: "https://github.com/n1tr0oo/assik1.git"}
+    - {name: repo-url, value: "https://github.com/n1tr0oo/devops-capstone-project.git"}
     - {name: branch, value: main}
     - {name: app-name, value: accounts}
     - {name: build-image, value: "us.icr.io/YOUR_NAMESPACE/accounts:1"}

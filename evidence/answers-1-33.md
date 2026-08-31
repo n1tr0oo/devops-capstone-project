@@ -7,17 +7,17 @@
 **Ответ (URL):**
 
 ```text
-https://github.com/n1tr0oo/assik1/blob/main/README.md
+https://github.com/n1tr0oo/devops-capstone-project/blob/main/README.md
 ```
 
-CI badge уже настроен на репозиторий `n1tr0oo/assik1`.
+CI badge настроен на репозиторий `n1tr0oo/devops-capstone-project`.
 
 ## Task 2
 
 **Ответ (URL):**
 
 ```text
-https://github.com/n1tr0oo/assik1/blob/main/.github/ISSUE_TEMPLATE/user-story.md
+https://github.com/n1tr0oo/devops-capstone-project/blob/main/.github/ISSUE_TEMPLATE/user-story.md
 ```
 
 ## Task 3
@@ -49,7 +49,7 @@ https://github.com/n1tr0oo/assik1/blob/main/.github/ISSUE_TEMPLATE/user-story.md
 **Ответ (URL):**
 
 ```text
-https://github.com/n1tr0oo/assik1/blob/main/setup.cfg
+https://github.com/n1tr0oo/devops-capstone-project/blob/main/setup.cfg
 ```
 
 ## Task 8
@@ -155,7 +155,7 @@ Access-Control-Allow-Origin: *
 ```text
 CI Build — completed successfully
 Run ID: 33394539429
-Run URL: https://github.com/n1tr0oo/assik1/actions/runs/33394539429
+Run URL: https://github.com/n1tr0oo/devops-capstone-project/actions
 Branch: main
 Event: push
 Set up job: passed
@@ -172,7 +172,7 @@ TOTAL: 100 statements, 3 missing, 97% coverage
 Result: OK
 ```
 
-Полный реальный лог: https://github.com/n1tr0oo/assik1/blob/main/evidence/ci-workflow-done
+Полный реальный лог: https://github.com/n1tr0oo/devops-capstone-project/blob/main/evidence/ci-workflow-done
 
 ## Task 20
 
@@ -185,7 +185,7 @@ Result: OK
 **Ответ (URL):**
 
 ```text
-https://github.com/n1tr0oo/assik1/blob/main/.github/workflows/ci-build.yaml
+https://github.com/n1tr0oo/devops-capstone-project/blob/main/.github/workflows/ci-build.yaml
 ```
 
 ## Task 22
@@ -193,7 +193,7 @@ https://github.com/n1tr0oo/assik1/blob/main/.github/workflows/ci-build.yaml
 **Ответ (URL):**
 
 ```text
-https://github.com/n1tr0oo/assik1/blob/main/service/__init__.py
+https://github.com/n1tr0oo/devops-capstone-project/blob/main/service/__init__.py
 ```
 
 ## Task 23
@@ -242,7 +242,7 @@ Ran 25 tests
 OK
 ```
 
-Полный результат: https://github.com/n1tr0oo/assik1/blob/main/evidence/security-headers-done
+Полный результат: https://github.com/n1tr0oo/devops-capstone-project/blob/main/evidence/security-headers-done
 
 ## Task 24
 
@@ -261,10 +261,10 @@ OK
 **Готовый реальный JSON приложения из контейнера на порту 8080:**
 
 ```json
-{"name":"Customer Accounts Service","version":"1.0"}
+{"name":"Account REST API Service","version":"1.0"}
 ```
 
-Evidence: https://github.com/n1tr0oo/assik1/blob/main/evidence/kube-app-output
+Evidence: https://github.com/n1tr0oo/devops-capstone-project/blob/main/evidence/kube-app-output
 
 ## Task 27
 
@@ -283,7 +283,7 @@ Evidence: https://github.com/n1tr0oo/assik1/blob/main/evidence/kube-app-output
 **Ответ (URL):**
 
 ```text
-https://github.com/n1tr0oo/assik1/blob/main/Dockerfile
+https://github.com/n1tr0oo/devops-capstone-project/blob/main/Dockerfile
 ```
 
 ## Task 30
@@ -298,7 +298,7 @@ Created Time: 22 seconds ago
 Size: 277MB
 ```
 
-Полный результат: https://github.com/n1tr0oo/assik1/blob/main/evidence/kube-images
+Полный результат: https://github.com/n1tr0oo/devops-capstone-project/blob/main/evidence/kube-images
 
 ## Task 31
 
@@ -337,7 +337,7 @@ cat pipelinerun.txt
 ```bash
 git add .
 git commit -m "Initial Customer Accounts capstone implementation"
-git remote add origin https://github.com/n1tr0oo/assik1.git
+git remote add origin https://github.com/n1tr0oo/devops-capstone-project.git
 git push -u origin main
 ```
 
