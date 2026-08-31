@@ -157,6 +157,12 @@ cat evidence/rest-delete-done
 
 ## Task 19
 
+**Успешный GitHub Actions run:**
+
+```text
+https://github.com/n1tr0oo/assik1/actions/runs/33391336696
+```
+
 После настоящего GitHub Actions run:
 
 ```bash

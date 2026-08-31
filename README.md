@@ -22,7 +22,7 @@ flake8 service tests --show-source
 nosetests --with-spec --spec-color
 ```
 
-The server listens on `0.0.0.0:8000`. `make install`, `make lint`, `make test`, and `make run` provide shortcuts. GitHub Actions runs lint and tests on every push and pull request. After a successful run, replace the badge placeholder with the final repository name. Save real CI logs with `gh run view RUN_ID --log > evidence/ci-workflow-done`.
+The server listens on `0.0.0.0:8000`. `make install`, `make lint`, `make test`, and `make run` provide shortcuts. GitHub Actions runs lint and tests on every push and pull request. The badge points to this repository's CI workflow. Save real CI logs with `gh run view RUN_ID --log > evidence/ci-workflow-done`.
 
 Local HTTP is enabled by default; set `FORCE_HTTPS=true` behind a TLS-aware production proxy.
 
