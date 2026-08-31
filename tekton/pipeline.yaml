@@ -1,0 +1,50 @@
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: accounts-cd
+spec:
+  params:
+    - {name: repo-url, type: string}
+    - {name: branch, type: string, default: main}
+    - {name: app-name, type: string, default: accounts}
+    - {name: build-image, type: string}
+  workspaces:
+    - name: source
+  tasks:
+    - name: clone
+      taskRef: {name: git-clone}
+      params:
+        - {name: url, value: "$(params.repo-url)"}
+        - {name: revision, value: "$(params.branch)"}
+      workspaces:
+        - {name: output, workspace: source}
+    - name: lint
+      runAfter: [clone]
+      taskRef: {name: flake8}
+      workspaces:
+        - {name: source, workspace: source}
+    - name: tests
+      runAfter: [lint]
+      taskSpec:
+        workspaces: [{name: source}]
+        steps:
+          - name: test
+            image: python:3.11-slim
+            workingDir: $(workspaces.source.path)
+            script: pip install -r requirements.txt && nosetests
+      workspaces:
+        - {name: source, workspace: source}
+    - name: build
+      runAfter: [tests]
+      taskRef: {name: buildah}
+      params:
+        - {name: IMAGE, value: "$(params.build-image)"}
+      workspaces:
+        - {name: source, workspace: source}
+    - name: deploy
+      runAfter: [build]
+      taskRef: {name: kubernetes-actions}
+      params:
+        - {name: script, value: "kubectl apply -f deploy/"}
+      workspaces:
+        - {name: manifest-dir, workspace: source}

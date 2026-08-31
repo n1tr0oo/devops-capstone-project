@@ -1,0 +1,18 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  generateName: accounts-cd-
+spec:
+  pipelineRef: {name: accounts-cd}
+  params:
+    - {name: repo-url, value: "https://github.com/n1tr0oo/REPOSITORY.git"}
+    - {name: branch, value: main}
+    - {name: app-name, value: accounts}
+    - {name: build-image, value: "us.icr.io/YOUR_NAMESPACE/accounts:1"}
+  workspaces:
+    - name: source
+      volumeClaimTemplate:
+        spec:
+          accessModes: [ReadWriteOnce]
+          resources:
+            requests: {storage: 1Gi}
