@@ -30,3 +30,14 @@ class AccountModelTest(unittest.TestCase):
         account.update_from({"name": "New", "ignored": "value"})
         self.assertEqual(account.name, "New")
         self.assertFalse(hasattr(account, "ignored"))
+
+    def test_account_table_name(self):
+        self.assertEqual(Account.__tablename__, "account")
+
+    def test_new_account_has_no_id_before_save(self):
+        self.assertIsNone(Account(name="A", email="a@example.com").id)
+
+    def test_optional_fields_default_to_none(self):
+        account = Account(name="A", email="a@example.com")
+        self.assertIsNone(account.address)
+        self.assertIsNone(account.phone_number)

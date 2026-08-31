@@ -23,6 +23,10 @@ def create_app(test_config=None):
     from service.routes import accounts_bp
     app.register_blueprint(accounts_bp)
 
+    @app.get("/")
+    def index():
+        return jsonify(name="Customer Accounts Service", version="1.0"), 200
+
     @app.get("/health")
     def health():
         return jsonify(status="OK"), 200
