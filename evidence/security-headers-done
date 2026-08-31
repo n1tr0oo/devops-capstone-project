@@ -1,0 +1,23 @@
+
+Account model
+- create and serialize account
+- update from
+
+Account routes
+- create list read update delete
+- health and security headers
+- validation conflict and missing
+
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+service\__init__.py      24      0   100%
+service\config.py         6      0   100%
+service\models.py        15      0   100%
+service\routes.py        52      3    94%   53-55
+---------------------------------------------------
+TOTAL                    97      3    97%
+----------------------------------------
+Ran 5 tests in 0.117s
+
+OK
+

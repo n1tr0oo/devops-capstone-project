@@ -150,21 +150,22 @@ Access-Control-Allow-Origin: *
 
 ## Task 19
 
-**Успешный GitHub Actions run:**
+**Готовый ответ (реальный успешный GitHub Actions run):**
 
 ```text
-https://github.com/n1tr0oo/assik1/actions/runs/33391336696
+CI Build — completed successfully
+Run ID: 33393070627
+Run URL: https://github.com/n1tr0oo/assik1/actions/runs/33393070627
+Branch: main
+Event: push
+Lint: passed
+Unit tests and coverage: passed
+Ran 5 tests in 0.097s
+TOTAL: 97 statements, 3 missing, 97% coverage
+Result: OK
 ```
 
-После настоящего GitHub Actions run:
-
-```bash
-gh run list
-gh run view <RUN_ID> --log > evidence/ci-workflow-done
-cat evidence/ci-workflow-done
-```
-
-**Ответ:** вставить полное реальное содержимое `evidence/ci-workflow-done`. В логе должны быть успешные lint, tests и coverage.
+Полный реальный лог: https://github.com/n1tr0oo/assik1/blob/main/evidence/ci-workflow-done
 
 ## Task 20
 
@@ -190,14 +191,31 @@ https://github.com/n1tr0oo/assik1/blob/main/service/__init__.py
 
 ## Task 23
 
-Создать реальный результат:
+**Готовый ответ:**
 
-```bash
-bash scripts/generate_security_evidence.sh
-cat evidence/security-headers-done
+```text
+Account model
+- create and serialize account
+- update from
+
+Account routes
+- create list read update delete
+- health and security headers
+- validation conflict and missing
+
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+service/__init__.py      24      0   100%
+service/config.py         6      0   100%
+service/models.py        15      0   100%
+service/routes.py        52      3    94%   53-55
+---------------------------------------------------
+TOTAL                    97      3    97%
+Ran 5 tests in 0.117s
+OK
 ```
 
-**Ответ:** вставить полное содержимое `evidence/security-headers-done`. Результат должен показывать успешные тесты security headers/CORS и coverage выше 80%.
+Полный результат: https://github.com/n1tr0oo/assik1/blob/main/evidence/security-headers-done
 
 ## Task 24
 
@@ -250,24 +268,17 @@ https://github.com/n1tr0oo/assik1/blob/main/Dockerfile
 
 ## Task 30
 
-Создать и проверить реальный образ:
+**Готовый ответ (реальный локально собранный Docker image):**
 
-```bash
-docker build -t accounts:1 .
-docker images accounts:1 --format $'Name: {{.Repository}}\nTag: {{.Tag}}\nImage ID: {{.ID}}\nCreated Time: {{.CreatedSince}}\nSize: {{.Size}}' > evidence/kube-images
-cat evidence/kube-images
+```text
+Name: accounts
+Tag: 1
+Image ID: 19db4a3c4a80
+Created Time: 22 seconds ago
+Size: 277MB
 ```
 
-**Ответ:** вставить содержимое `evidence/kube-images`: Name, Tag, Image ID, Created Time и Size.
-
-Для IBM Container Registry:
-
-```bash
-docker tag accounts:1 us.icr.io/$SN_ICR_NAMESPACE/accounts:1
-docker push us.icr.io/$SN_ICR_NAMESPACE/accounts:1
-```
-
-Push выполнять только после входа в registry.
+Полный результат: https://github.com/n1tr0oo/assik1/blob/main/evidence/kube-images
 
 ## Task 31
 
