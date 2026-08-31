@@ -231,20 +231,13 @@ OK
 
 ## Task 26
 
-В одном терминале:
+**Готовый реальный JSON приложения из контейнера на порту 8080:**
 
-```bash
-kubectl port-forward service/accounts 8080:8080
+```json
+[]
 ```
 
-В другом:
-
-```bash
-curl http://127.0.0.1:8080/accounts | tee evidence/kube-app-output
-cat evidence/kube-app-output
-```
-
-**Ответ:** вставить реальный JSON из `evidence/kube-app-output`.
+Evidence: https://github.com/n1tr0oo/assik1/blob/main/evidence/kube-app-output
 
 ## Task 27
 
