@@ -154,14 +154,21 @@ Access-Control-Allow-Origin: *
 
 ```text
 CI Build — completed successfully
-Run ID: 33393070627
-Run URL: https://github.com/n1tr0oo/assik1/actions/runs/33393070627
+Run ID: 33394539429
+Run URL: https://github.com/n1tr0oo/assik1/actions/runs/33394539429
 Branch: main
 Event: push
-Lint: passed
-Unit tests and coverage: passed
-Ran 5 tests in 0.097s
-TOTAL: 97 statements, 3 missing, 97% coverage
+Set up job: passed
+Initialize containers: passed
+Checkout: passed
+Install dependencies: passed
+Lint with flake8: passed
+Run unit tests with nosetests: passed
+Post Checkout: passed
+Stop containers: passed
+Complete job: passed
+Ran 25 tests
+TOTAL: 100 statements, 3 missing, 97% coverage
 Result: OK
 ```
 
@@ -195,23 +202,43 @@ https://github.com/n1tr0oo/assik1/blob/main/service/__init__.py
 
 ```text
 Account model
+- account table name
 - create and serialize account
+- new account has no id before save
+- optional fields default to none
 - update from
 
 Account routes
+- create adds date joined
+- create assigns id
 - create list read update delete
+- create preserves address
+- create preserves phone number
+- create returns json
+- delete removes account from list
+- duplicate email returns conflict
 - health and security headers
+- health returns ok
+- it should return a cors header
+- it should return security headers
+- list is initially empty
+- missing delete returns json error
+- missing read returns json error
+- read returns created email
+- root returns name and version
+- update email
+- update rejects empty email
 - validation conflict and missing
 
 Name                  Stmts   Miss  Cover   Missing
 ---------------------------------------------------
-service/__init__.py      24      0   100%
+service/__init__.py      27      0   100%
 service/config.py         6      0   100%
 service/models.py        15      0   100%
 service/routes.py        52      3    94%   53-55
 ---------------------------------------------------
-TOTAL                    97      3    97%
-Ran 5 tests in 0.117s
+TOTAL                   100      3    97%
+Ran 25 tests
 OK
 ```
 
@@ -234,7 +261,7 @@ OK
 **Готовый реальный JSON приложения из контейнера на порту 8080:**
 
 ```json
-[]
+{"name":"Customer Accounts Service","version":"1.0"}
 ```
 
 Evidence: https://github.com/n1tr0oo/assik1/blob/main/evidence/kube-app-output
