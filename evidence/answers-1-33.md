@@ -82,69 +82,62 @@ https://github.com/n1tr0oo/assik1/blob/main/setup.cfg
 
 На скриншоте: `Delete an account from the service`, estimate 3, Sprint 1, колонка Done.
 
-## Tasks 13–17: REST API
+## Tasks 13–17: готовые ответы REST API
 
-Сначала в одном терминале:
+Все блоки ниже получены реальными запросами к локально запущенному сервису 31 августа 2026 года. Копируйте содержимое нужного блока целиком.
 
-```bash
-python app.py
+### Task 13 — готовый ответ
+
+```text
+$ curl -i -X POST http://127.0.0.1:8000/accounts -H "Content-Type: application/json" -d '{"name":"John-Doe","email":"john@example.com","address":"Astana","phone_number":"+77000000000"}'
+HTTP/1.1 201 CREATED
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+
+{"address":"Astana","date_joined":"2026-08-31T12:39:39.452173","email":"john@example.com","id":1,"name":"John-Doe","phone_number":"+77000000000"}
 ```
 
-Во втором терминале:
+### Task 14 — готовый ответ
 
-```bash
-bash scripts/run_rest_tests.sh
+```text
+$ curl -i http://127.0.0.1:8000/accounts
+HTTP/1.1 200 OK
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+
+[{"address":"Astana","date_joined":"2026-08-31T12:39:39.452173","email":"john@example.com","id":1,"name":"John-Doe","phone_number":"+77000000000"}]
 ```
 
-### Task 13
+### Task 15 — готовый ответ
 
-**Вставить полное реальное содержимое:** `evidence/rest-create-done`
+```text
+$ curl -i http://127.0.0.1:8000/accounts/1
+HTTP/1.1 200 OK
+Content-Type: application/json
+Access-Control-Allow-Origin: *
 
-```bash
-cat evidence/rest-create-done
+{"address":"Astana","date_joined":"2026-08-31T12:39:39.452173","email":"john@example.com","id":1,"name":"John-Doe","phone_number":"+77000000000"}
 ```
 
-В результате должны быть команда POST, `HTTP/1.1 201 CREATED` и JSON созданного аккаунта.
+### Task 16 — готовый ответ
 
-### Task 14
+```text
+$ curl -i -X PUT http://127.0.0.1:8000/accounts/1 -H "Content-Type: application/json" -d '{"name":"John-Updated","email":"john.updated@example.com","address":"Astana","phone_number":"+77000000001"}'
+HTTP/1.1 200 OK
+Content-Type: application/json
+Access-Control-Allow-Origin: *
 
-**Вставить:**
-
-```bash
-cat evidence/rest-list-done
+{"address":"Astana","date_joined":"2026-08-31T12:39:39.452173","email":"john.updated@example.com","id":1,"name":"John-Updated","phone_number":"+77000000001"}
 ```
 
-Должны быть команда GET, `200 OK` и JSON-массив.
+### Task 17 — готовый ответ
 
-### Task 15
-
-**Вставить:**
-
-```bash
-cat evidence/rest-read-done
+```text
+$ curl -i -X DELETE http://127.0.0.1:8000/accounts/1
+HTTP/1.1 204 NO CONTENT
+Content-Type: text/html; charset=utf-8
+Access-Control-Allow-Origin: *
 ```
-
-Должны быть команда GET `/accounts/1`, `200 OK` и JSON аккаунта.
-
-### Task 16
-
-**Вставить:**
-
-```bash
-cat evidence/rest-update-done
-```
-
-Должны быть команда PUT, `200 OK` и обновлённый JSON.
-
-### Task 17
-
-**Вставить:**
-
-```bash
-cat evidence/rest-delete-done
-```
-
-Должны быть команда DELETE и `HTTP/1.1 204 NO CONTENT`.
 
 ## Task 18
 
